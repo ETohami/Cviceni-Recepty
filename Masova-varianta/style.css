@@ -1,11 +1,16 @@
-/* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-
-/* -------------------------------------------------- */
-
-/*
+            /* nejsme vcerejsi, pouzivame moderni box model */
+            
+            html {
+                box-sizing: border-box;
+            }
+            
+            *,
+             :after,
+             :before {
+                box-sizing: inherit;
+            }
+            /* -------------------------------------------------- */
+            /*
 pouzivame mobile first pristup
 tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
 s pribyvajici sirkou pridavame media query pro...
@@ -16,25 +21,143 @@ notebook/pc:
 @media (min-width: 860px) {
 }
 */
-
-
-body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-.paticka {
-    text-align: center;
-    font-size: 14px;
-    color: silver;
-}
-
-.paticka a {
-    color: silver;
-}
-
-
-/* ------------------------------- */
-/* ----- DOLE BUDE TVOJE CSS ----- */
-/* ------------------------------- */
-
+            
+            body {
+                margin: 0;
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+            
+            .paticka {
+                text-align: center;
+                font-size: 14px;
+                color: silver;
+            }
+            
+            .paticka a {
+                color: silver;
+            }
+            
+            .recept-nazev {
+                font-family: 'Raleway', sans-serif;
+                font-size: 28px;
+                font-weight: 800;
+                color: white;
+                position: absolute;
+                bottom: 3%;
+                left: 3%;
+            }
+            
+            .recept-komentare {
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: white;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+            
+            .recept-kategorie {
+                font-family: 'Source Sans Pro', sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                color: white;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            
+            .hlavni-recept {
+                width: 100%;
+                min-height: 200px;
+                background-image: url("images/burger.jpg");
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+            
+            .recept {
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                min-height: 90px;
+                border: 1px solid white;
+            }
+            
+            .recept2 {
+                background-image: url("images/sushi.jpg");
+                /* background-size: cover;
+    background-position: center;*/
+            }
+            
+            .recept3 {
+                background-image: url("images/kure.jpg");
+            }
+            
+            .recept4 {
+                background-image: url("images/rajcata.jpg");
+            }
+            
+            .recept5 {
+                background-image: url("images/grilovani.jpg");
+            }
+            
+            .recept-nazev {
+                font-size: 18px;
+            }
+            /*.cerna {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.26);
+}*/
+            
+            .recept-meta,
+            recept-nazev: {
+                z-index: 5;
+            }
+            /*.recept-meta {
+    display: flex;
+    justify-content: space-between;
+}*/
+            
+            .hlavni-recept::before,
+            .recept::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.26);
+            }
+            /* ------------------------------- */
+            /* ----- DOLE BUDE TVOJE CSS ----- */
+            /* ------------------------------- */
+            
+            @media (min-width: 480px) {
+                .recepty {
+                    display: flex;
+                    flex-wrap: wrap;
+                    /* gap: 2px; */
+                }
+                .recept {
+                    flex-basis: 50%;
+                }
+            }
+            
+            @media (min-width: 860px) {
+                .doporucujeme {
+                    display: flex;
+                }
+                .hlavni-recept {
+                    width: 33%;
+                }
+                .recepty {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 66%;
+                }
+            }
